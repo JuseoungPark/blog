@@ -1,0 +1,44 @@
+h2 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.ell {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.button {
+  padding: 0;
+  border: 0 none;
+  font-size: 0;
+  background-color: transparent;
+}
+.button__cont {
+  font-size: 13px;
+}
+.button--ico .button__cont {
+  font-size: 0;
+}
+.button .ico {
+  background-color: #bebebe;
+  text-indent: -9999px;
+  font-size: 0;
+}
+.ico {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+}
+.ico--large {
+  width: 32px;
+  height: 32px;
+}
