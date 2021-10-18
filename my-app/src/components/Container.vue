@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" :class="{'container--space' : space}">
     <div v-if="innerContainer" class="inner-container">
       <slot name="content">
         {{ defaultContent }}
@@ -18,7 +18,7 @@ export default {
     innerContainer: {
       type: Boolean,
       default: false,
-    }
+    },
   },
   data() {
     return {
@@ -30,10 +30,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .container {
-  display: flex;
+  /* display: flex;
   flex-flow: column wrap;
   align-items: flex-start;
-  height: 100%;
+  height: 100%; */
+  background-color: #f6f6f6;
 }
 .inner-container {
   flex: 1;

@@ -5,7 +5,7 @@
         <div class="cover__count-area">
           <span class="cover__count">오늘 {{ count }}</span>
           <i class="dot"></i>
-          <span class="cover__count">전체 {{ count_total }}</span>
+          <span class="cover__count">전체 {{ countTotal }}</span>
         </div>
         <h2 class="cover__title">{{ title }}</h2>
       </div>
@@ -18,19 +18,13 @@
         <div class="text__area">
           <span class="nick-name">sheep</span>
           <div class="bloger_info">
-            <span class="subject">일상·생각ㆍ</span>
-            <span class="buddy">75명의 이웃</span>
+            <span class="subject">디자인·퍼블리싱·프론트엔드</span>
           </div>
         </div>
       </div>
 
       <!-- 버튼 area -->
       <div class="button__area">
-        <!-- <button id="splugin" class="button button--ico">
-          <span class="button__cont">
-            <i class="ico ico--large ico--share">공유하기</i>
-          </span>
-        </button> -->
         <Button ico="share" />
       </div>
     </div>
@@ -47,7 +41,7 @@ export default {
       type: Number,
       default: 0,
     },
-    count_total: {
+    countTotal: {
       type: Number,
       default: 0,
     },
@@ -89,6 +83,10 @@ export default {
   content: '';
 }
 
+.cover__count-area {
+  display: inline-flex;
+  align-items: center;
+}
 .cover__content {
   flex: 1;
   z-index: 10;

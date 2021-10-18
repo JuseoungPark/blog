@@ -6,7 +6,7 @@
           {{ defaultContent }}
         </slot>
         <template v-if="ico">
-          <i class="ico" :class="'ico--' + ico">{{ ico_name }}</i>
+          <i class="ico" :class="'ico--' + ico">{{ txt }}</i>
         </template>
       </span>
     </button>
@@ -20,14 +20,8 @@ export default {
     ico: {
       type: String,
       default: '',
-      // type: Boolean,
-      // default: false,
     },
-    ico_class: {
-      type: String,
-      default: '',
-    },
-    ico_name: {
+    txt: {
       type: String,
       default: '버튼명',
     },
