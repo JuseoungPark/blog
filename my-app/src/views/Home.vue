@@ -22,7 +22,7 @@
                             <Button ico="card" txt="카드형 보기" />
                         </div>
                     </div>
-                    <List card />
+                    <List photo />
                 </Box>
             </Block>
         </Container>
