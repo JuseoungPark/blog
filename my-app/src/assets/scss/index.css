@@ -180,3 +180,103 @@ a {
   top: 0;
   margin-top: 0;
 }
+
+/* 블로거 UI */
+.bloger__area {
+  display: flex;
+  position: relative;
+  padding: 26px 45px 0 0;
+}
+.profile-img__area {
+  overflow: hidden;
+  width: 46px;
+  height: 46px;
+  border-radius: 9999px;
+}
+.profile-img {
+  width: inherit;
+  height: inherit;
+}
+
+.text__area {
+  flex: none;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 12px;
+}
+.text__area .nick-name {
+  display: block;
+  padding-top: 2px;
+  word-break: break-all;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #ffffff;
+  text-shadow: 0 2px 2px rgb(0 0 0 / 30%);
+}
+
+.bloger_info {
+  margin-top: 6px;
+}
+.bloger_info .subject {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 15px;
+  color: hsla(0,0%,100%,.7);
+}
+.bloger_info .buddy {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 15px;
+  color: hsla(0,0%,100%,.7);
+}
+
+/* Post */
+.post-section {
+  flex: 1;
+  margin-top: 20px;
+}
+.post-section:first-child {
+  margin-top: 0;
+}
+.post-section--txt {
+  padding: 0 16px;
+}
+.post-section--img {}
+.post-section--img img {
+  width: 100%;
+}
+.post-content__area {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Txt */
+.txt {}
+.txt--paragraph {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.align {}
+.align--left {
+  text-align: left;
+}
+.align--right {
+  text-align: right;
+}
+
+/* GNB */
+.gnb {
+  will-change: transform;
+  transition: transform 200ms linear;
+}
+.gnb--pinned {
+  transform: translateY(0%);
+}
+.gnb--unpinned {
+  transform: translateY(-100%);
+}

@@ -1,16 +1,12 @@
 <template>
-  <!-- <Fragment> -->
-    <button type="button" class="button" :class="{'button--ico' : ico}">
-      <span class="button__cont">
-        <slot name="content">
-          {{ defaultContent }}
-        </slot>
-        <template v-if="ico">
-          <i class="ico" :class="'ico--' + ico">{{ txt }}</i>
-        </template>
-      </span>
-    </button>
-  <!-- </Fragment> -->
+  <button type="button" class="button" :class="{'button--ico' : ico}">
+    <span class="button__cont">
+      <slot></slot>
+      <template v-if="ico">
+        <i class="ico" :class="'ico--' + ico">{{ txt }}</i>
+      </template>
+    </span>
+  </button>
 </template>
 
 <script>
@@ -19,11 +15,10 @@ export default {
   props: {
     ico: {
       type: String,
-      default: '',
     },
     txt: {
       type: String,
-      default: '버튼명',
+      default: '버튼 성격',
     },
   },
   data() {

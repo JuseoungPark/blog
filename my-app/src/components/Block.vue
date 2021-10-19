@@ -1,6 +1,6 @@
 <template>
     <div class="block">
-        <slot name="content">{{ content }}</slot>
+        <slot></slot>
     </div>
 </template>
 

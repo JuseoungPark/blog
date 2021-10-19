@@ -32,9 +32,7 @@
 </template>
 
 <script>
-import Button from './Button.vue'
 export default {
-  components: { Button },
   name: 'Cover',
   props: {
     count: {
@@ -110,57 +108,6 @@ export default {
   font-size: 13px;
   line-height: 20px;
   color: #ffffff;
-}
-
-.bloger__area {
-  display: flex;
-  position: relative;
-  padding: 26px 45px 0 0;
-}
-.profile-img__area {
-  overflow: hidden;
-  width: 46px;
-  height: 46px;
-  border-radius: 9999px;
-}
-.profile-img {
-  width: inherit;
-  height: inherit;
-}
-
-.text__area {
-  flex: none;
-  display: flex;
-  flex-flow: column wrap;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin-left: 12px;
-}
-.text__area .nick-name {
-  display: block;
-  padding-top: 2px;
-  word-break: break-all;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 20px;
-  color: #ffffff;
-  text-shadow: 0 2px 2px rgb(0 0 0 / 30%);
-}
-
-.bloger_info {
-  margin-top: 6px;
-}
-.bloger_info .subject {
-  display: inline-block;
-  font-size: 12px;
-  line-height: 15px;
-  color: hsla(0,0%,100%,.7);
-}
-.bloger_info .buddy {
-  display: inline-block;
-  font-size: 12px;
-  line-height: 15px;
-  color: hsla(0,0%,100%,.7);
 }
 .button__area {
   padding: 12px 0 30px 0;

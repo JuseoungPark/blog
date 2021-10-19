@@ -1,13 +1,9 @@
 <template>
   <div class="container" :class="{'container--space' : space}">
     <div v-if="innerContainer" class="inner-container">
-      <slot name="content">
-        {{ defaultContent }}
-      </slot>
+      <slot></slot>
     </div>
-    <slot name="content">
-      {{ defaultContent }}
-    </slot>
+    <slot></slot>
   </div>
 </template>
 

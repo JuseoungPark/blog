@@ -1,6 +1,6 @@
 <template>
     <div class="box" :class="{'box--space' : space}">
-        <slot name="content">{{ content }}</slot>
+        <slot></slot>
     </div>
 </template>
 
@@ -19,12 +19,12 @@ export default {
 <style scoped>
 .box {
     flex: 1;
-    border-width: 1px 0 1px 0;
-    border-style: solid;
-    border-color: #eaeaea;
     background-color: #ffffff;
 }
 .box--space {
     padding: 20px 16px;
+    border-width: 1px 0 1px 0;
+    border-style: solid;
+    border-color: #eaeaea;
 }
 </style>

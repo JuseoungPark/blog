@@ -1,6 +1,14 @@
 <template>
-  <div class="gnb" :class="{ 'gnb--transparent' : transparent }">
+  <div
+    class="gnb"
+    :class="[
+      { 'gnb--transparent' : transparent },
+      { 'gnb--unpinned' : scrolled },
+    ]"
+    v-on="handleScroll"
+  >
     <h1 class="logo">Blog</h1>
+    <strong class="gnb__page-title">기록</strong>
     <div class="gnb__tool">
       <button type="button" class="button button--ico">
         <span class="button__cont">
@@ -27,7 +35,32 @@ export default {
   },
   data() {
     return {
+      limitPosition: 100,
+      scrolled: false,
+      lastPosition: 0
     }
+  },
+  methods: {
+    handleScroll() {
+      if (this.lastPosition < window.scrollY && this.limitPosition < window.scrollY) {
+        this.scrolled = true;
+        // move up!
+      } 
+      
+      if (this.lastPosition > window.scrollY) {
+        this.scrolled = false;
+        // move down
+      }
+      
+      this.lastPosition = window.scrollY;
+      // this.scrolled = window.scrollY > 50;
+    }
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  unmounted() {
+    window.removeEventListener("scroll", this.handleScroll);
   },
 }
 </script>
@@ -45,16 +78,18 @@ export default {
   height: 56px;
   background-color: #fff;
 }
+.gnb .logo {
+    padding: 0 10px;
+    font-size: 18px;
+}
 .gnb--transparent {
-  position: absolute;
+  /* position: absolute; */
   background-color: transparent;
 }
-
-.gnb .logo {
-  padding: 0 10px;
-  font-size: 18px;
+.gnb--transparent .logo {
   color: #ffffff;
 }
+
 .gnb__tool {
   flex: none;
   display: inline-flex;
