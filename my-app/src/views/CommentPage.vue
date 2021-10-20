@@ -51,7 +51,7 @@
         </div>
         <FloatingBar>
             <div class="comment-input__wrap" :class="{'comment-input__wrap--expending' : isFocusInput}">
-                <input type="text" v-model="inputComment" class="text-field" @focus="focusInput()" @blur="focusInput()" placeholder="댓글을 입력해주세요." />
+                <input type="text" v-model="inputComment" class="text-field" @focus="focusInput()" @blur="focusInput()" :placeholder="isFocusInput ? '@를 입력하면 유저를 테그할 수 있어요.' : '댓글을 입력해주세요.'" />
                 <template v-if="isFocusInput">
                     <div class="button__area">
                         <Button ico="sticker" txt="스티커 선택" />

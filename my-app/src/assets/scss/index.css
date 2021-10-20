@@ -381,11 +381,10 @@ a {
 
 /* 하단 댓글 입력 바 */
 .comment-input__wrap {
+  flex: 1;
   display: flex;
   flex-flow: row wrap;
-  position: absolute;
-  width: 100%; min-height: 44px;
-  bottom: 0;
+  min-height: 44px;
 }
 .comment-input__wrap .text-field {
   flex: 1;
@@ -400,4 +399,5 @@ a {
 .comment-input__wrap--expending {}
 .comment-input__wrap--expending .text-field {
   min-width: 100%;
+  min-height: 60px;
 }
