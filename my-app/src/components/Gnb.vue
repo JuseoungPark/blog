@@ -8,7 +8,9 @@
     v-on="handleScroll"
   >
     <h1 class="logo">Blog</h1>
-    <strong class="gnb__page-title">기록</strong>
+    <Button>
+      <strong class="gnb__page-title ell">기록</strong>
+    </Button>
     <div class="gnb__tool">
       <button type="button" class="button button--ico">
         <span class="button__cont">
@@ -35,7 +37,7 @@ export default {
   },
   data() {
     return {
-      limitPosition: 100,
+      limitPosition: 56,
       scrolled: false,
       lastPosition: 0
     }
@@ -53,7 +55,7 @@ export default {
       }
       
       this.lastPosition = window.scrollY;
-      // this.scrolled = window.scrollY > 50;
+      // this.scrolled = window.scrollY > 28;
     }
   },
   created() {
@@ -70,6 +72,7 @@ export default {
 .gnb {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
@@ -83,18 +86,26 @@ export default {
     font-size: 18px;
 }
 .gnb--transparent {
-  /* position: absolute; */
   background-color: transparent;
 }
 .gnb--transparent .logo {
   color: #ffffff;
+}
+.gnb--transparent .gnb__page-title {
+  display: none;
+}
+
+.gnb__page-title {
+  margin: 0 20px;
+  font-size: 17px;
+  font-weight: 700;
 }
 
 .gnb__tool {
   flex: none;
   display: inline-flex;
   align-items: center;
-  margin-left: auto;
+  /* margin-left: auto; */
 }
 .gnb__tool .button--ico {
   padding: 10px;

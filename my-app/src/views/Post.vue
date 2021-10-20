@@ -75,23 +75,53 @@
                 </div>
             </Box>
         </Container>
+
+        <!-- 플로팅 바 -->
+        <FloatingBar>
+            <div class="button__area">
+                <div class="button__area__item">
+                    <Button ico="feed-back" txt="반응하기" count="13" />
+                    <!-- <Button ico="feed-back-per" txt="반응한 유저 보기" /> -->
+                    <Button ico="chat" txt="댓글열기" count="9" @click="onCommentPage()" />
+                </div>
+                <div class="button__area__item--right">
+                    <Button ico="share" txt="공유하기"></Button>
+                </div>
+            </div>
+        </FloatingBar>
+        <!-- // 플로팅 바 -->
+
+        <CommentPage v-if="isCommentPage"></CommentPage>
     </Fragment>
 </template>
 
 <script>
 // import { Fragment } from 'vue-fragment'
 import Gnb from '@/components/Gnb'
+import FloatingBar from '@/components/FloatingBar'
+
+// pages
+import CommentPage from '@/views/CommentPage'
 
 export default {
     name: 'Post',
     components: {
         // Fragment,
         Gnb,
+        FloatingBar,
+        // pages
+        CommentPage,
     },
     data() {
         return {
             title: '제목',
-            img: 'img_01'
+            img: 'img_01',
+            isCommentPage: false,
+        }
+    },
+    methods: {
+        onCommentPage() {
+            this.isCommentPage = !this.isCommentPage
         }
     }
 }
@@ -129,7 +159,7 @@ export default {
     align-items: flex-start;
     position: relative;
     margin: 0 auto;
-    padding: 100px 16px 30px 16px;
+    padding: 80px 16px 30px 16px;
 }
 .post-title-cover__txt--category {
     margin-bottom: 15px;
