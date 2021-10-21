@@ -28,6 +28,10 @@
                                 </div>
                             </div>
                             <!-- // 블로거 area -->
+
+                            <!-- 수정하기 버튼 -->
+                            <Button txt="수정하기" @click="onEditPage()" />
+                            <!-- // 수정하기 버튼 -->
                         </div>
                     </div>
 
@@ -92,6 +96,7 @@
         <!-- // 플로팅 바 -->
 
         <CommentPage v-if="isCommentPage"></CommentPage>
+        <EditPage v-if="isEditPage"></EditPage>
     </Fragment>
 </template>
 
@@ -102,6 +107,7 @@ import FloatingBar from '@/components/FloatingBar'
 
 // pages
 import CommentPage from '@/views/CommentPage'
+import EditPage from '@/views/EditPage'
 
 export default {
     name: 'Post',
@@ -111,18 +117,23 @@ export default {
         FloatingBar,
         // pages
         CommentPage,
+        EditPage,
     },
     data() {
         return {
             title: '제목',
             img: 'img_01',
             isCommentPage: false,
+            isEditPage: false,
         }
     },
     methods: {
         onCommentPage() {
             this.isCommentPage = !this.isCommentPage
-        }
+        },
+        onEditPage() {
+            this.isEditPage = !this.isEditPage
+        },
     }
 }
 </script>

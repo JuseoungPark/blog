@@ -1,7 +1,11 @@
 <template>
     <div class="header">
+        <slot name="left"></slot>
         <template v-if="backBtn">
             <Button ico="back-to-page" txt="뒤로가기" @click="closed" />
+        </template>
+        <template v-if="takeBack">
+            <Button txt="취소" @click="closed" />
         </template>
         <div class="header__title__area">
             <strong class="header__title">{{ title }}</strong>
@@ -17,7 +21,11 @@ export default {
     props: {
         backBtn: {
             type: Boolean,
-            default: true,
+            default: false,
+        },
+        takeBack: {
+            type: Boolean,
+            default: false,
         },
         closed: {
             type: Boolean,
@@ -39,7 +47,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .header {
     display: flex;
     align-items: center;
@@ -55,5 +63,12 @@ export default {
 }
 .header__title__area {
     margin: 0 auto;
+}
+.header__title {
+    font-size: 17px;
+}
+.header__title--count {
+    display: inline-block;
+    margin-left: 8px;
 }
 </style>

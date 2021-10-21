@@ -3,9 +3,13 @@
         class="txt"
         :class="[
             {'txt--light' : light},
-            {'txt--bold' : bold}
+            {'txt--bold' : bold},
+            {'txt--primary' : primary},
         ]"
-        :style="'font-size:' + size + 'px;'"
+        :style="
+            'font-size:' + size + 'px;' +
+            'margin-left:' + marginLeft + 'px;'
+        "
     >
         <slot></slot>
     </span>
@@ -18,11 +22,18 @@ export default {
         size: {
             type: Number,
         },
+        marginLeft: {
+            type: Number,
+        },
         light: {
             type: Boolean,
             default: false,
         },
         bold: {
+            type: Boolean,
+            default: false,
+        },
+        primary: {
             type: Boolean,
             default: false,
         },
@@ -43,5 +54,8 @@ export default {
 }
 .txt--bold {
     font-weight: 700;
+}
+.txt--primary {
+    color: #7E21B9;
 }
 </style>

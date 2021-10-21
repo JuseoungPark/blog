@@ -17,9 +17,13 @@ const routes = [
         component: () => import("@/views/Home"),
     },
     {
+        path: "/write",
+        name: "Write",
+        component: () => import("@/views/WritePage"),
+    },
+    {
         path: "/post",
         name: "Post",
-        // component: Post,
         component: () => import("@/views/Post"),
     },
 ];

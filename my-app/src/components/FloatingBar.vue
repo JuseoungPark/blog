@@ -6,11 +6,17 @@
 
 <script>
 export default {
-    
+    name: 'floating-bar',
+    // props: {
+    //     off: {
+    //         type: Boolean,
+    //         default: false,
+    //     }
+    // },
 }
 </script>
 
-<style scoped>
+<style>
 .floating-bar {
     display: flex;
     align-items: center;
@@ -28,5 +34,8 @@ export default {
     background-color: #ffffff;
     transform: translate(0,0);
     transition: transform .4s;
+}
+.floating-bar--unpinned {
+    transform: translateY(100%);
 }
 </style>

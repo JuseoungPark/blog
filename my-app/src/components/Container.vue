@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :class="{'container--space' : space}">
+  <div class="container">
     <div v-if="innerContainer" class="inner-container">
       <slot></slot>
     </div>

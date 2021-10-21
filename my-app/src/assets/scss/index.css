@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   -webkit-font-smoothing: auto;
   height: 100%;
@@ -340,6 +343,9 @@ a {
 .button__area__item--right .button--ico {
   padding: 9px 0 9px 16px;
 }
+.button__area .button {
+  margin-left: 16px;
+}
 
 .button--line {}
 .button--line .button__cont {
@@ -368,15 +374,21 @@ a {
   color: #ffffff;
   background-color: #7E21B9;
 }
-
-/* border-color: #a1a1a1; */
+.button--solid:disabled .button__cont {
+  border-color: #a1a1a1;
+  background-color: #a1a1a1;
+}
 
 /* Input */
 .text-field {
   flex: 1;
-  padding: 0 10px;
-  border: 1px solid #bebebe;
+  padding: 0 12px;
+  border: 0 none;
+  /* border-width: 1px;
+  border-style: solid;
+  border-color: #bebebe; */
   border-radius: 0;
+  font-size: 15px;
 }
 
 /* 하단 댓글 입력 바 */
@@ -388,10 +400,14 @@ a {
 }
 .comment-input__wrap .text-field {
   flex: 1;
-  height: 44px;
+  min-height: 44px;
+  border-width: 1px 0 0 0;
+}
+.comment-input__wrap .button__area {
+  border-top: 1px solid #e0e0e0;
 }
 .comment-input__wrap .button__cont {
-  width: 40px;
+  width: 64px;
   line-height: 44px;
 }
 
@@ -400,4 +416,10 @@ a {
 .comment-input__wrap--expending .text-field {
   min-width: 100%;
   min-height: 60px;
+}
+
+
+.content {}
+.content .container {
+  margin-top: 55px;
 }

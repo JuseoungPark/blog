@@ -9,13 +9,7 @@
                 <Button line>글보기</Button>
             </template>
         </Header>
-        <div class="comment__wrap">
-            <div class="comment__wrap--empty" v-if="comments.length == 0">
-                <span class="comment__text">
-                    댓글이 없습니다.<br>
-                    첫번째 댓글을 남겨주세요.
-                </span>
-            </div>
+        <div class="edit__wrap">
             <ul class="comment__list">
                 <li
                     v-for="(item, key) in comments"

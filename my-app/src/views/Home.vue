@@ -26,6 +26,7 @@
                 </Box>
             </Block>
         </Container>
+        <Navigation />
     </Fragment>
 </template>
 

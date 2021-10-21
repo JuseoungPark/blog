@@ -15,7 +15,7 @@
       <template v-if="count">
         <span class="count">{{ count }}</span>
       </template>
-      <slot></slot>
+      <slot>{{ txt }}</slot>
     </span>
   </button>
 </template>
