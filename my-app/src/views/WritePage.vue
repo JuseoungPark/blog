@@ -12,27 +12,45 @@
         <Container>
             <div class="write__wrap">
                 <div class="write__title__wrap">
-                    <TextInput v-model="title" placeholder="제목" title @focus="onTakePhoto()" />
-                    <template v-if="isTakePhoto">
-                        <Button ico="photo" txt="사진, 동영상 불러오기" />
-                    </template>
+                    <QuillEditor
+                        :options="titleEditor"
+                        @focus="onTakePhoto()"
+                        @blur="onTakePhoto()"
+                    />
+                    <div id="my-title" v-show="isTakePhoto">
+                        <!-- <Button ico="photo" txt="사진, 동영상 불러오기" /> -->
+                        <button class="ql-image"></button>
+                    </div>
                 </div>
-                <!-- <div class="edit-txt__wrap" contenteditable>
-                    <p class="edit-txt">{{ txt }}</p>
-                </div> -->
                 <div class="write__txt__wrap">
-                    <TextInput v-model="txt" placeholder="본문을 입력하시유." @keyup.enter="keyPress" />
-                    <input class="text-field" value="포커싱 해보세요.. 플로팅 바가 올라올 겁니다.." @focus="isFloationBar = !isFloationBar" @blur="isFloationBar = !isFloationBar" />
+                    <QuillEditor
+                        :options="contentEditor"
+                        @focus="isFloationBar = !isFloationBar"
+                        @blur="isFloationBar = !isFloationBar"
+                    />
                 </div>
             </div>
+            <!--
+                * Guide
+
+                * 테마
+                ** snow, bubble
+
+                * 추가 기능 연장 옵션
+                ** essential, minimal, full
+            -->
         </Container>
 
         <FloatingBar :class="{'floating-bar--unpinned' : !isFloationBar}">
-            <div class="button__area">
-                <Button ico="sticker" txt="스티커 선택" />
+            <div class="button__area" id="my-content">
+                <button class="ql-align"></button>
+                <button class="ql-image"></button>
+                <!-- But you can also add your own -->
+                <Button id="custom-button" ico="sticker" txt="스티커 선택" />
                 <Button ico="camera" txt="사진 선택" />
                 <Txt size="14" light marginLeft="8">이모지나 사진, 동영상을 불러오는 버튼입니다.</Txt>
             </div>
+            <!-- <template ></template> -->
         </FloatingBar>
     </Content>
 </template>
@@ -44,10 +62,26 @@ export default {
     data() {
         return {
             value: '',
-            title: '',
+            // title: '',
             txt: '',
             isTakePhoto: false,
             isFloationBar: false,
+            // edit option
+            titleEditor: {
+                debug: 'title',
+                modules: {
+                    toolbar: '#my-title'
+                },
+                placeholder: '제목',
+                thema: 'full',
+            },
+            contentEditor: {
+                debug: 'content',
+                modules: {
+                    toolbar: '#my-content'
+                },
+                placeholder: '내용을 입력하세요',
+            }
         }
     },
     watch: {
@@ -87,6 +121,9 @@ export default {
     display: flex;
     flex-flow: column wrap;
     margin-top: 24px;
+}
+.write__txt__wrap.focus {
+    min-height: 100vh;
 }
 .comment__wrap {
     display: flex;

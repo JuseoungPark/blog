@@ -17,12 +17,12 @@
                     <div class="post__area__title">
                         <strong class="post__title">전체글</strong>
                         <div class="view-type-btn__area">
-                            <Button ico="photo" txt="사진만 보기" />
-                            <Button ico="list" txt="목록형 보기" />
-                            <Button ico="card" txt="카드형 보기" />
+                            <Button ico="photo" txt="사진만 보기" @click="typePhotoList" />
+                            <Button ico="list" txt="목록형 보기" @click="typeList" />
+                            <Button ico="card" txt="카드형 보기" @click="typeCardList" />
                         </div>
                     </div>
-                    <List photo />
+                    <List :photo="photo" :typeList="list" :card="card" />
                 </Box>
             </Block>
         </Container>
@@ -46,7 +46,27 @@ export default {
     },
     data() {
         return {
+            photo: true,
+            list: false,
+            card: false,
         }
+    },
+    methods: {
+        typePhotoList() {
+            this.photo = true
+            this.list = false
+            this.card = false
+        },
+        typeList() {
+            this.photo = false
+            this.list = true
+            this.card = false
+        },
+        typeCardList() {
+            this.photo = false
+            this.list = false
+            this.card = true
+        },
     }
 }
 </script>
