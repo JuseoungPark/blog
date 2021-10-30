@@ -10,10 +10,12 @@
             </template>
         </Header>
         <Container>
-            <div class="write__wrap">
+            <div class="write__wrap" :class="{'write__wrap--focus' : isFloationBar}">
                 <div class="write__title__wrap">
                     <QuillEditor
-                        :options="titleEditor"
+                        v-model="title.content"
+                        :options="title.options"
+                        :disabled="title.disabled"
                         @focus="onTakePhoto()"
                         @blur="onTakePhoto()"
                     />
@@ -24,7 +26,9 @@
                 </div>
                 <div class="write__txt__wrap">
                     <QuillEditor
-                        :options="contentEditor"
+                        v-model="content.content"
+                        :options="content.options"
+                        :disabled="content.disabled"
                         @focus="isFloationBar = !isFloationBar"
                         @blur="isFloationBar = !isFloationBar"
                     />
@@ -47,8 +51,7 @@
                 <button class="ql-image"></button>
                 <!-- But you can also add your own -->
                 <Button id="custom-button" ico="sticker" txt="스티커 선택" />
-                <Button ico="camera" txt="사진 선택" />
-                <Txt size="14" light marginLeft="8">이모지나 사진, 동영상을 불러오는 버튼입니다.</Txt>
+                <!-- <Button ico="camera" txt="사진 선택" /> -->
             </div>
             <!-- <template ></template> -->
         </FloatingBar>
@@ -62,26 +65,33 @@ export default {
     data() {
         return {
             value: '',
-            // title: '',
             txt: '',
             isTakePhoto: false,
             isFloationBar: false,
             // edit option
-            titleEditor: {
-                debug: 'title',
-                modules: {
-                    toolbar: '#my-title'
+            title: {
+                content: 'title',
+                options: {
+                    debug: 'title',
+                    modules: {
+                        toolbar: '#my-title'
+                    },
+                    placeholder: '제목',
+                    thema: 'full',
                 },
-                placeholder: '제목',
-                thema: 'full',
+                disabled: false,
             },
-            contentEditor: {
-                debug: 'content',
-                modules: {
-                    toolbar: '#my-content'
+            content: {
+                content: 'content',
+                options: {
+                    debug: 'content',
+                    modules: {
+                        toolbar: '#my-content'
+                    },
+                    placeholder: '내용을 입력하세요',
                 },
-                placeholder: '내용을 입력하세요',
-            }
+                disabled: false,
+            },
         }
     },
     watch: {

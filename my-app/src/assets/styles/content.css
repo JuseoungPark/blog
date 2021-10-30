@@ -19,11 +19,30 @@
     color: rgba(0, 0, 0, 0.3);
 }
 
+
+.write__wrap {}
+.write__wrap--focus {
+    display: flex;
+    flex-flow: column nowrap;
+    max-height: calc(100vh - 55px - 44px);
+}
+.write__wrap--focus .write__title__wrap {
+    flex: none;
+}
+.write__wrap--focus .write__txt__wrap {
+    flex: 1;
+    padding-bottom: 60px;
+}
+.write__wrap--focus .write__txt__wrap .ql-editor {
+}
+.write__wrap--focus .write__txt__wrap .ql-editor p:last-child {
+}
+
 .write__title__wrap .ql-container {
     flex: 1;
 }
 .write__title__wrap .ql-editor {
-    padding: 10px 0;
+    padding: 12px 0;
 }
 .write__title__wrap .ql-editor,
 .write__title__wrap .ql-editor.ql-blank {
@@ -32,4 +51,13 @@
 .write__title__wrap .ql-editor::before,
 .write__title__wrap .ql-editor.ql-blank::before {
     left: 0;
+}
+.write__title__wrap .ql-editor p {
+    word-break: break-all;
+}
+
+.write__txt__wrap {}
+.write__txt__wrap .ql-editor,
+.write__txt__wrap .ql-editor.ql-blank {
+    font-size: 15px;
 }
