@@ -47,10 +47,12 @@
 
         <FloatingBar :class="{'floating-bar--unpinned' : !isFloationBar}">
             <div class="button__area" id="my-content">
-                <button class="ql-align"></button>
+                <!-- <button class="ql-align"></button> -->
                 <button class="ql-image"></button>
+                <button class="ql-blockquote"></button>
+                <button class="ql-code-block"></button>
                 <!-- But you can also add your own -->
-                <Button id="custom-button" ico="sticker" txt="스티커 선택" />
+                <!-- <Button id="custom-button" ico="sticker" txt="스티커 선택" /> -->
                 <!-- <Button ico="camera" txt="사진 선택" /> -->
             </div>
             <!-- <template ></template> -->
